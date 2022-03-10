@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import ProgressHUD
 
 class LoginViewController: UIViewController {
     
@@ -39,17 +39,39 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         updateUIFor(login: true)
         setupTextFieldDelegates()
+        setupBackgroundTap()
     }
 
     //MARK: - IBActions
     
     @IBAction func loginButtonPressed(_ sender: Any) {
+        if isDataInputdFor(type: isLogin ? "login" : "register")
+        {
+            //Login or Register
+            print("have data for login/register")
+        } else {
+            ProgressHUD.showFailed("All field are required")
+        }
     }
     
     @IBAction func forgotPasswordButtonPressed(_ sender: Any) {
+        if isDataInputdFor(type: "password")
+        {
+            //reset password
+            print("have data for forgot password")
+        } else {
+            ProgressHUD.showFailed("Email is required")
+        }
     }
     
     @IBAction func resendEmailButtonPressed(_ sender: Any) {
+        if isDataInputdFor(type: "password")
+        {
+            //resend verification code
+            print("have data for resend email")
+        } else {
+            ProgressHUD.showFailed("Email is required")
+        }
     }
     
     @IBAction func signUpButtonPressed(_ sender: UIButton) {
@@ -69,6 +91,17 @@ class LoginViewController: UIViewController {
     @objc func textFieldDidChange(_ textField: UITextField)
     {
         updatePlaceholderLabels(textField: textField)
+    }
+    
+    private func setupBackgroundTap()
+    {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(backgroundTap))
+        view.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc func backgroundTap()
+    {
+        view.endEditing(false)
     }
     
     //Mark: - Animation
@@ -97,6 +130,20 @@ class LoginViewController: UIViewController {
             passwordLbl.text = textField.hasText ? "Password" : ""
         default:
            repeatPasswordLbl.text = textField.hasText ? "Repeat Password" : ""
+        }
+    }
+    
+    //MARK: - Helpers
+    private func isDataInputdFor(type: String) -> Bool
+    {
+        switch type
+        {
+        case "login":
+            return emailTextField.text != "" && passwordTextField.text != ""
+        case "registration":
+            return emailTextField.text != "" && passwordTextField.text != "" && repeatPasswordTextField.text != ""
+        default:
+            return emailTextField.text != ""
         }
     }
 }
