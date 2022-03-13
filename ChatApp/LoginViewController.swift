@@ -48,7 +48,7 @@ class LoginViewController: UIViewController {
         if isDataInputdFor(type: isLogin ? "login" : "register")
         {
             //Login or Register
-            print("have data for login/register")
+            isLogin ? loginUser() : registerUser()
         } else {
             ProgressHUD.showFailed("All field are required")
         }
@@ -144,6 +144,25 @@ class LoginViewController: UIViewController {
             return emailTextField.text != "" && passwordTextField.text != "" && repeatPasswordTextField.text != ""
         default:
             return emailTextField.text != ""
+        }
+    }
+    
+    private func loginUser() {
+        
+    }
+    private func registerUser() {
+        if passwordTextField.text == repeatPasswordTextField.text {
+            FirebaseUserListener.shared.registerUserWith(email: emailTextField.text!, password: passwordTextField.text!) { (error) in
+                
+                if error == nil {
+                    ProgressHUD.showSucceed("Verificition email sent")
+                    self.resendEmailButton.isHidden = false
+                } else {
+                    ProgressHUD.showFailed(error?.localizedDescription)
+                }
+            }
+        } else {
+            ProgressHUD.showError("The Password don't match")
         }
     }
 }
