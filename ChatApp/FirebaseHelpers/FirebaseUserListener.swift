@@ -14,9 +14,24 @@ class FirebaseUserListener {
     private init () { }
         
         //MARK: - Login
+    func loginUserWithEmail(email: String, password: String, completion: @escaping (_ error: Error?, _ isEmailVerified: Bool) -> Void) {
+        
+        Auth.auth().signIn(withEmail: email, password: password) { (AuthDataResult, error) in
+            if error == nil && AuthDataResult!.user.isEmailVerified {
+                
+                FirebaseUserListener.shared.downloadUserDataFromFirbase(userId: AuthDataResult!.user.uid, email: email)
+                completion(error, true)
+                
+            } else {
+                print("Email is not verified")
+                completion(error, false)
+            }
+        }
+
+    }
         
         //MARK: - Register
-        func registerUserWith(email:String, password:String, completion: @escaping(_ error: Error?) -> Void) {
+        func registerUserWith(email: String, password: String, completion: @escaping (_ error: Error?) -> Void) {
             Auth.auth().createUser(withEmail: email, password: password) { (authDataResult, error) in
                 completion(error)
                 
@@ -47,6 +62,33 @@ class FirebaseUserListener {
         } catch {
             print(error.localizedDescription, "ading user")
         }
-        
+    }
+    
+    //MARK: - Download
+    
+    func downloadUserDataFromFirbase(userId: String, email: String? = nil) {
+        FirebaseReference(.User).document(userId).getDocument { (querySnapshot, error) in
+            guard let document = querySnapshot else {
+                print("no document for user")
+                
+                return
+            }
+            let result = Result {
+                try? document.data(as: User.self)
+            }
+            switch result {
+            case .success(let userObject):
+                if let user = userObject {
+                    
+                    saveUserLocally(user)
+                } else {
+                    print("Document dosn't exist")
+                }
+            case .failure(let error):
+                print("Error dexoding user ", error)
+            
+            }
+        }
     }
 }
+

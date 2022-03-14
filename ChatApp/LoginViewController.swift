@@ -112,7 +112,7 @@ class LoginViewController: UIViewController {
         signUpButton.setTitle(login ? "SignUp" : "Login", for: .normal)
         signUpLbl.text = login ? "Don't have an account?" : "Have an account?"
         
-        UIView.animate(withDuration: 0.5)
+        UIView.animate(withDuration: 0.10)
         {
             self.repeatPasswordLbl.isHidden = login
             self.repeatPasswordTextField.isHidden = login
@@ -148,7 +148,20 @@ class LoginViewController: UIViewController {
     }
     
     private func loginUser() {
-        
+        print("Yahooooooo")
+        FirebaseUserListener.shared.loginUserWithEmail(email: emailTextField.text!, password: passwordTextField.text!) { (error, isEmailVerified) in
+            if error == nil {
+                if isEmailVerified {
+                    
+                    self.gotoApp()
+                } else {
+                    ProgressHUD.showFailed("Please verify Email")
+                    self.resendEmailButton.isHidden = false
+                }
+            } else {
+                ProgressHUD.showFailed(error!.localizedDescription)
+            }
+        }
     }
     private func registerUser() {
         if passwordTextField.text == repeatPasswordTextField.text {
@@ -164,6 +177,11 @@ class LoginViewController: UIViewController {
         } else {
             ProgressHUD.showError("The Password don't match")
         }
+    }
+    //MARK: - Navigation
+    private func gotoApp() {
+        print("Go to app")
+
     }
 }
 
