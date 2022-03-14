@@ -57,18 +57,15 @@ class LoginViewController: UIViewController {
     @IBAction func forgotPasswordButtonPressed(_ sender: Any) {
         if isDataInputdFor(type: "password")
         {
-            //reset password
-            print("have data for forgot password")
+            resetPassword()
         } else {
             ProgressHUD.showFailed("Email is required")
         }
     }
     
     @IBAction func resendEmailButtonPressed(_ sender: Any) {
-        if isDataInputdFor(type: "password")
-        {
-            //resend verification code
-            print("have data for resend email")
+        if isDataInputdFor(type: "password") {
+            resendVerificationEmail()
         } else {
             ProgressHUD.showFailed("Email is required")
         }
@@ -148,7 +145,7 @@ class LoginViewController: UIViewController {
     }
     
     private func loginUser() {
-        print("Yahooooooo")
+        //print("Yahooooooo")
         FirebaseUserListener.shared.loginUserWithEmail(email: emailTextField.text!, password: passwordTextField.text!) { (error, isEmailVerified) in
             if error == nil {
                 if isEmailVerified {
@@ -176,6 +173,25 @@ class LoginViewController: UIViewController {
             }
         } else {
             ProgressHUD.showError("The Password don't match")
+        }
+    }
+    
+    private func resetPassword() {
+        FirebaseUserListener.shared.resetPasswordFor(email: emailTextField.text!) { (error) in
+            if error == nil {
+                ProgressHUD.showSuccess("Reset link send to Email")
+            } else {
+                ProgressHUD.showFailed(error!.localizedDescription)
+            }
+        }
+    }
+    private func resendVerificationEmail() {
+        FirebaseUserListener.shared.resendVerificatiobEmail(email: emailTextField.text!) { (error) in
+            if error == nil {
+                ProgressHUD.showSuccess("New verification Email sent")
+            } else {
+                ProgressHUD.showFailed(error!.localizedDescription)
+            }
         }
     }
     //MARK: - Navigation
