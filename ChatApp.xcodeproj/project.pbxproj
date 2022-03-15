@@ -128,6 +128,14 @@
 			path = FirebaseHelpers;
 			sourceTree = "<group>";
 		};
+		CEB36DD927E0B97A00F57834 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				CE8B3F9E27DCAEFC0080E970 /* Constants.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		CED6CAB027D478D9005D1473 = {
 			isa = PBXGroup;
 			children = (
@@ -158,7 +166,7 @@
 				CED6CAC027D478D9005D1473 /* LoginViewController.swift */,
 				CE9BE50427DDAF1B00E8E0A7 /* FirebaseHelpers */,
 				CE8B3FA027DCB64F0080E970 /* Model */,
-				CE8B3F9E27DCAEFC0080E970 /* Constants.swift */,
+				CEB36DD927E0B97A00F57834 /* Helpers */,
 				CED6CAC227D478D9005D1473 /* Main.storyboard */,
 				CED6CAC527D478DB005D1473 /* Assets.xcassets */,
 				CED6CAC727D478DB005D1473 /* LaunchScreen.storyboard */,

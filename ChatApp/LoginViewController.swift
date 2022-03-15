@@ -7,6 +7,7 @@
 
 import UIKit
 import ProgressHUD
+import Gallery
 
 class LoginViewController: UIViewController {
     
@@ -186,7 +187,7 @@ class LoginViewController: UIViewController {
         }
     }
     private func resendVerificationEmail() {
-        FirebaseUserListener.shared.resendVerificatiobEmail(email: emailTextField.text!) { (error) in
+        FirebaseUserListener.shared.resendVerificationEmail(email: emailTextField.text!) { (error) in
             if error == nil {
                 ProgressHUD.showSuccess("New verification Email sent")
             } else {
@@ -196,8 +197,14 @@ class LoginViewController: UIViewController {
     }
     //MARK: - Navigation
     private func gotoApp() {
-        print("Go to app")
+        
+        let mainView = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainView") as! UITabBarController
+        
+        mainView.modalPresentationStyle = .fullScreen
+        self.present(mainView, animated: true, completion: nil)
 
     }
+    
+   
 }
 

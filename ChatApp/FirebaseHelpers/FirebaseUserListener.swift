@@ -56,7 +56,7 @@ class FirebaseUserListener {
         }
     
     //MARK: - Resend link Methods
-    func resendVerificatiobEmail(email: String, completion: @escaping (_ error: Error?) -> Void) {
+    func resendVerificationEmail(email: String, completion: @escaping (_ error: Error?) -> Void) {
         Auth.auth().currentUser?.reload(completion: { (error) in
             Auth.auth().currentUser?.sendEmailVerification(completion: { (error) in
                 completion(error)
