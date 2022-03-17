@@ -14,6 +14,7 @@
 		CE8B3F9F27DCAEFC0080E970 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8B3F9E27DCAEFC0080E970 /* Constants.swift */; };
 		CE9BE50327DDAC5300E8E0A7 /* FCollectionReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9BE50227DDAC5300E8E0A7 /* FCollectionReference.swift */; };
 		CE9BE50627DDF2B000E8E0A7 /* FirebaseUserListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9BE50527DDF2B000E8E0A7 /* FirebaseUserListener.swift */; };
+		CEB36DDB27E0E49A00F57834 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB36DDA27E0E49A00F57834 /* SettingsTableViewController.swift */; };
 		CED6CABD27D478D9005D1473 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED6CABC27D478D9005D1473 /* AppDelegate.swift */; };
 		CED6CABF27D478D9005D1473 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED6CABE27D478D9005D1473 /* SceneDelegate.swift */; };
 		CED6CAC127D478D9005D1473 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED6CAC027D478D9005D1473 /* LoginViewController.swift */; };
@@ -56,6 +57,7 @@
 		CE8B3F9E27DCAEFC0080E970 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CE9BE50227DDAC5300E8E0A7 /* FCollectionReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCollectionReference.swift; sourceTree = "<group>"; };
 		CE9BE50527DDF2B000E8E0A7 /* FirebaseUserListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUserListener.swift; sourceTree = "<group>"; };
+		CEB36DDA27E0E49A00F57834 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		CED6CAB927D478D9005D1473 /* ChatApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CED6CABC27D478D9005D1473 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CED6CABE27D478D9005D1473 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 				CED6CABC27D478D9005D1473 /* AppDelegate.swift */,
 				CED6CABE27D478D9005D1473 /* SceneDelegate.swift */,
 				CED6CAC027D478D9005D1473 /* LoginViewController.swift */,
+				CEB36DDA27E0E49A00F57834 /* SettingsTableViewController.swift */,
 				CE9BE50427DDAF1B00E8E0A7 /* FirebaseHelpers */,
 				CE8B3FA027DCB64F0080E970 /* Model */,
 				CEB36DD927E0B97A00F57834 /* Helpers */,
@@ -450,6 +453,7 @@
 				CE8B3F9F27DCAEFC0080E970 /* Constants.swift in Sources */,
 				CE8B3F9D27DCAC030080E970 /* User.swift in Sources */,
 				CED6CAC127D478D9005D1473 /* LoginViewController.swift in Sources */,
+				CEB36DDB27E0E49A00F57834 /* SettingsTableViewController.swift in Sources */,
 				CED6CABD27D478D9005D1473 /* AppDelegate.swift in Sources */,
 				CE9BE50627DDF2B000E8E0A7 /* FirebaseUserListener.swift in Sources */,
 				CED6CABF27D478D9005D1473 /* SceneDelegate.swift in Sources */,
