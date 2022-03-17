@@ -450,6 +450,9 @@
                                                     </constraints>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain" title="Edit"/>
+                                                    <connections>
+                                                        <action selector="editButtonPressed:" destination="fRa-17-Ffv" eventType="touchUpInside" id="MoZ-gd-K1x"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
