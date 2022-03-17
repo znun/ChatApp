@@ -116,6 +116,8 @@ extension EditProfileTableViewController: UITextFieldDelegate {
     }
 }
 
+//MARK: - Extension
+
 extension EditProfileTableViewController : GalleryControllerDelegate {
     func galleryController(_ controller: GalleryController, didSelectImages images: [Image]) {
         if images.count > 0 {
