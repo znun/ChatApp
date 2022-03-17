@@ -12,6 +12,7 @@
 		928DB02F438B149F01460DDA /* Pods_ChatApp_ChatAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51C5A78234015149CDC752B1 /* Pods_ChatApp_ChatAppUITests.framework */; };
 		CE8B3F9D27DCAC030080E970 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8B3F9C27DCAC030080E970 /* User.swift */; };
 		CE8B3F9F27DCAEFC0080E970 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8B3F9E27DCAEFC0080E970 /* Constants.swift */; };
+		CE99122227E3479B00CC43C7 /* EditProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE99122127E3479B00CC43C7 /* EditProfileTableViewController.swift */; };
 		CE9BE50327DDAC5300E8E0A7 /* FCollectionReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9BE50227DDAC5300E8E0A7 /* FCollectionReference.swift */; };
 		CE9BE50627DDF2B000E8E0A7 /* FirebaseUserListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9BE50527DDF2B000E8E0A7 /* FirebaseUserListener.swift */; };
 		CEB36DDB27E0E49A00F57834 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB36DDA27E0E49A00F57834 /* SettingsTableViewController.swift */; };
@@ -55,6 +56,7 @@
 		B30B50AD47AAA93B9EB07951 /* Pods-ChatAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatAppTests.release.xcconfig"; path = "Target Support Files/Pods-ChatAppTests/Pods-ChatAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		CE8B3F9C27DCAC030080E970 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CE8B3F9E27DCAEFC0080E970 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		CE99122127E3479B00CC43C7 /* EditProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileTableViewController.swift; sourceTree = "<group>"; };
 		CE9BE50227DDAC5300E8E0A7 /* FCollectionReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCollectionReference.swift; sourceTree = "<group>"; };
 		CE9BE50527DDF2B000E8E0A7 /* FirebaseUserListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUserListener.swift; sourceTree = "<group>"; };
 		CEB36DDA27E0E49A00F57834 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 				CED6CABC27D478D9005D1473 /* AppDelegate.swift */,
 				CED6CABE27D478D9005D1473 /* SceneDelegate.swift */,
 				CED6CAC027D478D9005D1473 /* LoginViewController.swift */,
+				CE99122127E3479B00CC43C7 /* EditProfileTableViewController.swift */,
 				CEB36DDA27E0E49A00F57834 /* SettingsTableViewController.swift */,
 				CE9BE50427DDAF1B00E8E0A7 /* FirebaseHelpers */,
 				CE8B3FA027DCB64F0080E970 /* Model */,
@@ -454,6 +457,7 @@
 				CE8B3F9D27DCAC030080E970 /* User.swift in Sources */,
 				CED6CAC127D478D9005D1473 /* LoginViewController.swift in Sources */,
 				CEB36DDB27E0E49A00F57834 /* SettingsTableViewController.swift in Sources */,
+				CE99122227E3479B00CC43C7 /* EditProfileTableViewController.swift in Sources */,
 				CED6CABD27D478D9005D1473 /* AppDelegate.swift in Sources */,
 				CE9BE50627DDF2B000E8E0A7 /* FirebaseUserListener.swift in Sources */,
 				CED6CABF27D478D9005D1473 /* SceneDelegate.swift in Sources */,

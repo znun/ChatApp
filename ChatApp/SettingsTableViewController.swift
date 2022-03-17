@@ -55,6 +55,15 @@ class SettingsTableViewController: UITableViewController {
         return .leastNormalMagnitude
     }
     
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        if indexPath.section == 0 && indexPath.row == 0 {
+            performSegue(withIdentifier: "settingsToEditProfileSeg", sender: self)
+        }
+    }
+    
     //MARK: - IBActions
     
     @IBAction func tellFriendButtonPressed(_ sender: Any) {
