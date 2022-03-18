@@ -17,7 +17,7 @@ struct User: Codable, Equatable {
     var avatarLink = ""
     var status: String
     
-    static var currentID : String? {
+    static var currentId : String? {
         return Auth.auth().currentUser!.uid
 
     }

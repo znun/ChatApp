@@ -85,8 +85,7 @@ class EditProfileTableViewController: UITableViewController {
         usernameTextField.clearButtonMode = .whileEditing
         
     }
-
-    //MARK: - Configure
+   //MARK: - Gallery
     private func  showImageGallery() {
         self.gallery = GalleryController()
         self.gallery.delegate = self
@@ -96,6 +95,23 @@ class EditProfileTableViewController: UITableViewController {
         Config.initialTab = .imageTab
         
         self.present(gallery, animated: true, completion: nil)
+    }
+    
+    //MARK: - UploadImages
+    private func uploadAvatarImage(_ image: UIImage) {
+        let fileDirectory = "Avatars/" + "_\(User.currentId)" + ".jpg"
+        
+        FileStorage.uploadImage(image, directory: fileDirectory) { (avatarLink) in
+           
+            if var user = User.currentUser {
+                user.avatarLink = avatarLink ?? ""
+                saveUserLocally(user)
+                FirebaseUserListener.shared.saveUserToFirestore(user)
+            }
+            
+            //TODO: Save image locally
+            
+        }
     }
 }
 
@@ -116,14 +132,13 @@ extension EditProfileTableViewController: UITextFieldDelegate {
     }
 }
 
-//MARK: - Extension
 
 extension EditProfileTableViewController : GalleryControllerDelegate {
     func galleryController(_ controller: GalleryController, didSelectImages images: [Image]) {
         if images.count > 0 {
             images.first!.resolve { (avatarImage) in
                 if avatarImage != nil {
-                    //TODO: upload image
+                    self.uploadAvatarImage(avatarImage!)
                     self.avatarImageView.image = avatarImage
                 } else {
                     ProgressHUD.showFailed("Couldn't select image!")

@@ -13,6 +13,7 @@
 		CE8B3F9D27DCAC030080E970 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8B3F9C27DCAC030080E970 /* User.swift */; };
 		CE8B3F9F27DCAEFC0080E970 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8B3F9E27DCAEFC0080E970 /* Constants.swift */; };
 		CE99122227E3479B00CC43C7 /* EditProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE99122127E3479B00CC43C7 /* EditProfileTableViewController.swift */; };
+		CE99122427E37AE500CC43C7 /* FileStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE99122327E37AE500CC43C7 /* FileStorage.swift */; };
 		CE9BE50327DDAC5300E8E0A7 /* FCollectionReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9BE50227DDAC5300E8E0A7 /* FCollectionReference.swift */; };
 		CE9BE50627DDF2B000E8E0A7 /* FirebaseUserListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9BE50527DDF2B000E8E0A7 /* FirebaseUserListener.swift */; };
 		CEB36DDB27E0E49A00F57834 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB36DDA27E0E49A00F57834 /* SettingsTableViewController.swift */; };
@@ -57,6 +58,7 @@
 		CE8B3F9C27DCAC030080E970 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CE8B3F9E27DCAEFC0080E970 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CE99122127E3479B00CC43C7 /* EditProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileTableViewController.swift; sourceTree = "<group>"; };
+		CE99122327E37AE500CC43C7 /* FileStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileStorage.swift; sourceTree = "<group>"; };
 		CE9BE50227DDAC5300E8E0A7 /* FCollectionReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCollectionReference.swift; sourceTree = "<group>"; };
 		CE9BE50527DDF2B000E8E0A7 /* FirebaseUserListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUserListener.swift; sourceTree = "<group>"; };
 		CEB36DDA27E0E49A00F57834 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				CE9BE50227DDAC5300E8E0A7 /* FCollectionReference.swift */,
+				CE99122327E37AE500CC43C7 /* FileStorage.swift */,
 				CE9BE50527DDF2B000E8E0A7 /* FirebaseUserListener.swift */,
 			);
 			path = FirebaseHelpers;
@@ -453,6 +456,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE9BE50327DDAC5300E8E0A7 /* FCollectionReference.swift in Sources */,
+				CE99122427E37AE500CC43C7 /* FileStorage.swift in Sources */,
 				CE8B3F9F27DCAEFC0080E970 /* Constants.swift in Sources */,
 				CE8B3F9D27DCAC030080E970 /* User.swift in Sources */,
 				CED6CAC127D478D9005D1473 /* LoginViewController.swift in Sources */,
