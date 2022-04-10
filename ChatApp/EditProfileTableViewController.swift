@@ -8,6 +8,8 @@
 import UIKit
 import Gallery
 import ProgressHUD
+import RealmSwift
+
 
 class EditProfileTableViewController: UITableViewController {
     
@@ -73,7 +75,10 @@ class EditProfileTableViewController: UITableViewController {
             statusLabel.text = user.status
             
             if user.avatarLink != "" {
-                //set avatar
+                //download and set avatar image
+                FileStorage.downloadImage(imageUrl: user.avatarLink) { (avatarImage) in
+                    self.avatarImageView.image = avatarImage?.circleMasked
+                }
             }
                 
         }
@@ -110,7 +115,7 @@ class EditProfileTableViewController: UITableViewController {
             }
             
             //TODO: Save image locally
-            
+            FileStorage.saveFileLocally(fileData: image.jpegData(compressionQuality: 1.0)! as NSData, fileName: User.currentId!)
         }
     }
 }
@@ -147,18 +152,19 @@ extension EditProfileTableViewController : GalleryControllerDelegate {
         }
         controller.dismiss(animated: true, completion: nil)
     }
-    
+
     func galleryController(_ controller: GalleryController, didSelectVideo video: Video) {
         controller.dismiss(animated: true, completion: nil)
     }
-    
+
     func galleryController(_ controller: GalleryController, requestLightbox images: [Image]) {
         controller.dismiss(animated: true, completion: nil)
     }
-    
+
     func galleryControllerDidCancel(_ controller: GalleryController) {
         controller.dismiss(animated: true, completion: nil)
     }
-    
-    
+
+
 }
+

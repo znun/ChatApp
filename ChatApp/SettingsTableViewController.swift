@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import RealmSwift
+//import SwiftUI
 
 class SettingsTableViewController: UITableViewController {
 
@@ -28,6 +30,7 @@ class SettingsTableViewController: UITableViewController {
     override func viewDidAppear(_ animated: Bool) {
         
         showUserInfo()
+        
     }
     
     //Mark: - TableView Delegates
@@ -61,6 +64,7 @@ class SettingsTableViewController: UITableViewController {
         
         if indexPath.section == 0 && indexPath.row == 0 {
             performSegue(withIdentifier: "settingsToEditProfileSeg", sender: self)
+        
         }
     }
     
@@ -96,8 +100,10 @@ class SettingsTableViewController: UITableViewController {
             if user.avatarLink != "" {
             
                 //download and set avatar image
+                FileStorage.downloadImage(imageUrl: user.avatarLink) { (avatarImage) in
+                    self.avatarView.image = avatarImage
+                }
             }
-                
         }
     }
 }
