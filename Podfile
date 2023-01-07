@@ -1,7 +1,7 @@
-# Uncomment the next line to define a global platform for your project
+Pod # Uncomment the next line to define a global platform for your project
 # platform :ios, '9.0'
 
-target 'ChatApp' do
+target 'ExpenseManager' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
@@ -15,7 +15,7 @@ target 'ChatApp' do
     pod ‘FirebaseFirestoreSwift’
 
     pod ‘Gallery’
-    pod ‘RealmSwift’
+    
 
     pod ‘ProgressHUD’
     pod ‘SKPhotoBrowser’
@@ -24,12 +24,12 @@ target 'ChatApp' do
     pod ‘InputBarAccessoryView’
 
 
-  target 'ChatAppTests' do
+  target 'ExpenseManagerTests' do
     inherit! :search_paths
     # Pods for testing
   end
 
-  target 'ChatAppUITests' do
+  target 'ExpenseManagerUITests' do
     # Pods for testing
   end
 
